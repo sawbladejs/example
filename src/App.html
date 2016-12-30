@@ -1,4 +1,30 @@
 <div>
   <h1>App Container</h1>
+  <ul>
+    <li>
+      <a href="javascript:void(0)" on:click="navigate('/')">/</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" on:click="navigate('/users/')">/users/</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" on:click="navigate('/users/;page=2')">/users/;page=2</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" on:click="navigate('/users/123')">/users/123</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" on:click="navigate('/users/321')">/users/321</a>
+    </li>
+  </ul>
   <div ref:outlet></div>
 </div>
+<script>
+import { navigate } from 'sawblade';
+
+export default {
+  methods: {
+    navigate
+  }
+}
+</script>

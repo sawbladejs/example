@@ -17,11 +17,13 @@ export default [
       {
         path: '/',
         render: ({ parent, params }) => new UserList({ target: parent.refs.outlet, data: { page: params.page } }),
+        update: ({ context, params }) => context.set({ page: params.page }),
         teardown: component => component.teardown()
       },
       {
         path: '/:id',
         render: ({ parent, params }) => new UserDetail({ target: parent.refs.outlet, data: { id: params.id } }),
+        update: ({ context, params }) => context.set({ id: params.id }),
         teardown: component => component.teardown()
       }
     ]
